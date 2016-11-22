@@ -9,6 +9,7 @@ export class ChecklistModel {
     constructor(public title: string, public items: any[]) {
         this.items = items;
 
+        //create our observable
         this.checklist=Observable.create(observer=>{
             this.checklistObserver=observer;
         });
