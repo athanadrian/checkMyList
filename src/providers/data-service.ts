@@ -15,4 +15,9 @@ export class DataService {
     console.log('Hello DataService Provider');
   }
 
+  save(checklists){
+
+  }
+
+
 }

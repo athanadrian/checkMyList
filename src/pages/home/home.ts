@@ -33,7 +33,7 @@ export class HomePage {
       message: 'Δώστε όνομα για τη νέα λίστα:',
       inputs: [
         {
-          name: 'name'
+          name: 'title'
         }
       ],
       buttons: [
@@ -43,7 +43,7 @@ export class HomePage {
         {
           text: 'Αποθήκευση',
           handler: data => {
-            let newChecklist = new ChecklistModel(data.name, []);
+            let newChecklist = new ChecklistModel(data.title, []);
             this.checklists.push(newChecklist);
 
             newChecklist.checklist.subscribe(update => {
@@ -105,7 +105,9 @@ export class HomePage {
     }
   }
 
+  //save function
   save(): void {
     console.log('Checklist saved.....');
+    this.dataService.save(this.checklists);
   }
 }

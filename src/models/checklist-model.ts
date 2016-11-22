@@ -53,7 +53,7 @@ export class ChecklistModel {
         this.checklistObserver.next(true);
     }
 
-    //Hide item change state of item
+    //check item change state of item
     toggleItem(item): void {
         item.checked = !item.checked;
         this.checklistObserver.next(true);
