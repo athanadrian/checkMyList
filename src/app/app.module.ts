@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { IonicApp, IonicModule } from 'ionic-angular';
-import { Storage } from '@ionic/Storage';
+import { Storage } from '@ionic/storage';
 import { ChecklistApp } from './app.component';
 import { HomePage, ChecklistPage, IntroPage } from '../pages/pages';
 
