@@ -1,6 +1,14 @@
 // http://ionicframework.com/docs/v2/theming/
 
-
+ion-content {
+    background-color: #141cb3 !important;
+}
+.logo {
+    max-height: 39px;
+}
+button {
+    border: none !important;
+}
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These

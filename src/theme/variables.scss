@@ -26,11 +26,23 @@ $colors: (
   primary:    #387ef5,
   secondary:  #32db64,
   danger:     #f53d3d,
-  light:      #f4f4f4,
+  light:      #fff,
   dark:       #222,
   favorite:   #141cb3
 );
 
+$list-background-color: #fff;
+
+$list-ios-activated-background-color: #141cb3;
+$list-md-activated-background-color: #141cb3;
+
+$checkbox-ios-background-color-on: #141cb3;
+$checkbox-ios-icon-border-color-on: #fff;
+
+$checkbox-md-icon-background-color-on: #141cb3;
+$checkbox-md-icon-background-color-off: #fff;
+$checkbox-md-icon-border-color-off: #cecece;
+$checkbox-md-icon-border-color-on: #141cb3;
 
 // App iOS Variables
 // --------------------------------------------------
