@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-
 import { HomePage } from '../home/home';
 
 @Component({
@@ -9,21 +8,15 @@ import { HomePage } from '../home/home';
 })
 export class IntroPage {
 
-  slideOptions: any;
+  slideOptions: any;  
 
-  constructor(public navCtrl: NavController) {
-
+  constructor(public nav: NavController){
     this.slideOptions = {
       pager: true
     };
   }
 
-  ionViewDidLoad() {
-    console.log('Hello IntroPage Page');
+  goToHome(): void {
+    this.nav.setRoot(HomePage);
   }
-
-  startApp(){
-    this.navCtrl.setRoot(HomePage);
-  }
-
 }

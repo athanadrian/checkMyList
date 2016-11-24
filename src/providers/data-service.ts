@@ -1,26 +1,27 @@
 import { Injectable } from '@angular/core';
-//import { Http } from '@angular/http';
 import { Storage } from '@ionic/storage';
 import 'rxjs/add/operator/map';
 
-/*
-  Generated class for the DataService provider.
 
-  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
-  for more info on providers and Angular 2 DI.
-*/
 @Injectable()
 export class DataService {
 
   constructor(public storage: Storage) {
+    //Storage will store data in a native SQLite db if is avaliable
+    // if SQlite is not avaliable when app is running natively on a device storage will use IndexedDB, WebSQL, or localstorage.
   }
+
   getData(): Promise<any> {
+    //return data in the form of a promise
     return this.storage.get('checklists');
   }
+
+  //function that actually saves data into storage
   save(data): void {
     let saveData = [];
-    //Remove observables
+    
     data.forEach((checklist) => {
+      //Remove observable stuff
       saveData.push({
         title: checklist.title,
         items: checklist.items

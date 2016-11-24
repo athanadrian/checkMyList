@@ -1,17 +1,6 @@
 // http://ionicframework.com/docs/v2/theming/
 
-ion-content {
-    background-color: #141cb3 !important;
-}
-.logo {
-    max-height: 39px;
-    min-height: 39px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-button {
-    border: none !important;
-}
+
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These
@@ -25,3 +14,15 @@ button {
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+ion-content {
+	background-color: #32db64 !important;
+}
+
+.logo {
+	max-height: 39px;
+}
+
+button {
+	border: none !important;
+}

@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { NavController, AlertController, Platform } from 'ionic-angular';
 
 import { ChecklistPage } from '../checklist/checklist';
+import { IntroPage } from '../intro/intro';
+
 import { DataService } from '../../providers/data-service';
 import { ChecklistModel } from '../../models/checklist-model';
 import { Storage } from '@ionic/storage';
@@ -24,22 +26,41 @@ export class HomePage {
 
   }
 
+  //loading Data from storage whenever the user opens the application
   ionViewDidLoad() {
+    //call will execute after the device(platform) is ready
     this.platform.ready().then(() => {
+      //check if intro page has displayed before through introShown
+      this.storage.get('introShown').then((result)=>{
+        //if is the first time open application
+        if(!result){
+          //initialize introShown to true into storage
+          this.storage.set('introShown', true);
+          //navigate to int page
+          this.navCtrl.setRoot(IntroPage)
+        }
+      });
+      //call to getData which returns a Promise so we can access data when they are ready
       this.dataService.getData().then((checklists) => {
         let savedChecklists: any = false;
         if (typeof (checklists) != "undefined") {
+          //decode the json string into array so we can work with
           savedChecklists = JSON.parse(checklists);
         }
         if (savedChecklists) {
+          //loop through arrray
           savedChecklists.forEach((savedChecklist) => {
-            let loadChecklist = new ChecklistModel(savedChecklist.title,
-              savedChecklist.items);
+            //and create new checklist to use all the helper functions we made on the model
+            let loadChecklist = new ChecklistModel
+            (
+              savedChecklist.title,
+              savedChecklist.items
+            );
             this.checklists.push(loadChecklist);
+            //setup listener for observable
             loadChecklist.checklist.subscribe(update => {
               this.save();
             });
-           
           });
         }
       });

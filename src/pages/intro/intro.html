@@ -4,15 +4,80 @@
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
+<!--<ion-header>
 
   <ion-navbar>
-    <ion-title>intro</ion-title>
+    <ion-title>Οδηγίες</ion-title>
   </ion-navbar>
 
-</ion-header>
+</ion-header>-->
 
 
-<ion-content padding>
-
+<ion-content>
+  <ion-slides [options]="slideOptions">
+     <ion-slide>
+      <ion-row>
+        <ion-col>
+          <div class="message" text-center>
+            <p><span class="intro" >Δημιουργείστε</span></p>
+            <p><span class="intro" style="font-weight: bold;">χωρίς όριο</span></p>
+            <p><span class="intro" >ομαδοποιημένες λίστες εργασιών.</span></p>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <img src="assets/images/slides/slide_1_transparent.png"/>
+        </ion-col>
+      </ion-row>
+    </ion-slide>
+     <ion-slide>
+      <ion-row>
+        <ion-col>
+         <div class="message" text-center>
+            <p><span class="intro" >Προσθέστε όσες εργασίες επιθυμείτε</span></p>
+            <p><span class="intro" style="font-weight: bold;">για την κάθε λίστα</span></p>
+            <p><span class="intro" >και τσεκάρετέ τις όταν τις υλοποιείτε.</span></p>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <img src="assets/images/slides/slide_2_transparent.png"/>
+        </ion-col>
+      </ion-row>
+    </ion-slide>
+     <ion-slide>
+      <ion-row>
+        <ion-col>
+          <div class="message" text-center color="primary">
+            <p><span class="intro" >Όταν ολοκληρώσετε τις εργασίες</span></p>
+            <p><span class="intro" style="font-weight: bold;">χρησιμοποιήστε το κουμπί ανακύκλωσης</span></p>
+            <p><span class="intro" >για να ανανεώσετε τη λίστα.</span></p>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <img src="assets/images/slides/slide_4_transparent.png"/>
+        </ion-col>
+      </ion-row>
+    </ion-slide>
+    <ion-slide>
+      <ion-row>
+        <ion-col>
+          <div class="message" text-center>
+            <p><span class="intro" >Για να επεξεργαστείτε ή να διαγράψετε οτιδήποτε απλά</span></p>
+            <p><span class="intro" style="font-weight: bold;">σύρετε προς τα αριστερά</span></p>
+          </div>
+          <button ion-button color="danger" (click)="startApp()" style="margin-top:20px;"><span class="intro" >Ξεκινήστε την εφαρμογή</span></button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <img src="assets/images/slides/slide_3_transparent.png"/>
+        </ion-col>
+      </ion-row>
+    </ion-slide>
+  </ion-slides>
 </ion-content>
